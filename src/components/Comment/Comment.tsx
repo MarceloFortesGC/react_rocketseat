@@ -19,7 +19,11 @@ export function Comment(props: CommentProps) {
     }
 
     function _handleLikeComment() {
-        setLikeCount(likeCount + 1)
+        /// Está sendo atualizado dessa forma para poder sempre acessar o valor mais recente da 
+        /// variável "likeCount".
+        setLikeCount((state) => {
+            return state + 1;
+        })
     }
 
     var commentAction =
