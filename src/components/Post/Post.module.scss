@@ -1,0 +1,102 @@
+@import '../../global.scss';
+@import '../../Styles/ButtonStyles.scss';
+@import '../Avatar/Avatar.module.scss';
+
+.post {
+    background-color: var(--gray-800);
+    border-radius: 8px;
+    overflow: hidden;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    +.post {
+        margin-top: 2rem;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .author {
+            display: flex;
+            gap: 1rem;
+
+            .avatar {
+                @extend .avatarImg;
+                border: 4px solid var(--gray-800);
+                outline: 2px solid var(--green-500);
+            }
+
+            .authorInfo {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+        }
+
+        time {
+            align-self: flex-start;
+        }
+    }
+
+    .content {
+        p {
+            margin-top: 1rem;
+        }
+
+        a {
+            text-decoration: none;
+            font-weight: bold;
+            color: var(--green-500);
+            transition: all 0.2s;
+
+            &:hover {
+                color: var(--green-300);
+            }
+        }
+    }
+
+    .commentForm {
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--gray-600);
+        gap: 1rem;
+
+        &:focus-within {
+            footer {
+                visibility: visible;
+                max-height: none;
+            }
+
+        }
+
+        textarea {
+            margin: 1rem 0;
+            width: 100%;
+            resize: none;
+            background-color: var(--gray-900);
+            height: 6rem;
+            color: var(--gray-100);
+            border-radius: 8px;
+            border: none;
+            padding: 0.5rem;
+        }
+
+        footer {
+            visibility: hidden;
+            max-height: 0;
+        }
+
+        button[type=submit] {
+            @extend .primaryButton;
+        }
+    }
+
+    .commentList {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}

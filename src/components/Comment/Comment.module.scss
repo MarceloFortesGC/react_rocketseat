@@ -1,0 +1,54 @@
+@import '../../global.scss';
+@import '../../Styles/ButtonStyles.scss';
+
+button {
+    @extend .iconButton;
+    color: var(--gray-400);
+    transition: color 0.2s;
+}
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    background-color: var(--gray-700);
+    color: var(--gray-100);
+    width: 100%;
+    gap: 1rem;
+    min-height: 3rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+
+    button {
+        &:hover {
+            color: var(--red-500)
+        }
+    }
+
+    header {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+
+.likeAction {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0 0 4rem;
+    align-items: center;
+    transition: color 0.1s;
+
+    &:hover {
+        color: var(--green-300)
+    }
+
+    span {
+        &::before {
+            content: "\2022";
+            padding: 0 0.5rem 0 0;
+        }
+    }
+}

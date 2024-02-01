@@ -1,0 +1,31 @@
+@import '../../global.scss';
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+
+    .avatarImg {
+        box-sizing: initial;
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 8px;
+        align-self: flex-start;
+    }
+
+    .author {
+        display: flex;
+        gap: 1rem;
+
+        .authorInfo {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    time {
+        align-self: flex-start;
+    }
+}
